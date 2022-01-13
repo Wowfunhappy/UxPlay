@@ -8,6 +8,9 @@ include(GNUInstallDirs)
 
 set ( CMAKE_CXX_STANDARD 11 )
 
+include_directories(/opt/local/include/LegacySupport)
+link_libraries(/opt/local/lib/libMacportsLegacySupport.a)
+
 if ( ZOOMFIX )
 add_definitions( -DX_DISPLAY_FIX )
 find_package( X11 REQUIRED )

@@ -20,10 +20,10 @@
 #ifdef SYS_ENDIAN_H
 #include <sys/endian.h>
 #else
-#include <endian.h>
+#include <libkern/OSByteOrder.h>
 #endif
-#define htonll(x) htobe64(x)
-#define ntohll(x) be64toh(x)
+#define htonll(x) OSSwapHostToBigInt64(x)
+#define ntohll(x) OSSwapBigToHostInt64(x)
 #endif
 
 // The functions in this file assume a little endian cpu architecture!
